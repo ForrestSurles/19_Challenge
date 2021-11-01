@@ -1,86 +1,15 @@
 # Cryptocurrency Wallet
-
-################################################################################
-# For this Challenge, you will assume the perspective of a Fintech Finder
-# customer in order to do the following:
-
-# * Generate a new Ethereum account instance by using your mnemonic seed phrase
-# (which you created earlier in the module).
-
-# * Fetch and display the account balance associated with your Ethereum account
-# address.
-
-# * Calculate the total value of an Ethereum transaction, including the gas
-# estimate, that pays a Fintech Finder candidate for their work.
-
-# * Digitally sign a transaction that pays a Fintech Finder candidate, and send
-# this transaction to the Kovan testnet.
-
-# * Review the transaction hash code associated with the validated blockchain transaction.
-
-# Once you receive the transaction’s hash code, you will navigate to [Kovan’s
-# Etherscan](https://kovan.etherscan.io/) website to review the blockchain
-# transaction details. To confirm that you have successfully created the
-# transaction, you will save screenshots to the README.md file of your GitHub
-# repository for this Challenge assignment.
-
-################################################################################
 # Imports
 import streamlit as st
 from dataclasses import dataclass
 from typing import Any, List
 
-################################################################################
-# Step 1:
-# Import Ethereum Transaction Functions into the Fintech Finder Application
-
-# In this section, you'll import several functions from the `crypto_wallet.py`
-# script into the file `fintech_finder.py`, which contains code for Fintech
-# Finder’s customer interface, in order to add wallet operations to the
-# application. For this section, you will assume the perspective of a Fintech
-# Finder customer (i.e., you’ll provide your Ethereum wallet and account
-# information to the application).
-
-# Complete the following steps:
-
-# 1. Review the code contained in the `crypto_wallet.py` script file. Note that
-# the Ethereum transaction functions that you have built throughout this
-# module-including `wallet`, `wallet.derive_acount`, `get_balance`, `fromWei`,
-# `estimateGas`, `sendRawTransaction`, and others&mdash;have now been
-# incorporated into Python functions that allow you to automate the process of
-# accessing them.
-
-# 2. Add your mnemonic seed phrase and your Infura project id (both of which
-# you created earlier in the module) to the starter code’s `SAMPLE.env` file.
-# When the information has been added, rename the file `.env`.
-
-# 3. Import the following functions from the `crypto_wallet.py` file:
-# * `generate_account`
-# * `get_balance`
-# * `send_transaction`
-
-# 4. Within the Streamlit sidebar section of code, create a variable named
-# `account`. Set this variable equal to a call on the `generate_account`
-# function. This function will create the Fintech Finder customer’s (in this
-# case, your) HD wallet and Ethereum account.
-
-# 5. Within this same section of the `fintech_finder.py` file, define a
-# new `st.sidebar.write` function that will display the balance of the
-# customer’s account. Inside this function, call the `get_balance` function
-# and pass it your Ethereum `account.address`.
-
-################################################################################
-# Step 1 - Part 3:
-# Import the following functions from the `crypto_wallet.py` file:
-# * `generate_account`
-# * `get_balance`
-# * `send_transaction`
-
+# Import custom functions from crypto_wallet.py
 from crypto_wallet import generate_account
 from crypto_wallet import get_balance
 from crypto_wallet import send_transaction
 
-################################################################################
+#######################################################################
 # Fintech Finder Candidate Information
 
 # Database of Fintech Finder candidates including their name, digital address, rating and hourly cost per Ether.
@@ -143,7 +72,7 @@ st.sidebar.write(account.address)
 # @TODO
 # Call `get_balance` function and pass it your account address
 # Write the returned ether balance to the sidebar
-# YOUR CODE HERE
+st.sidebar.write(get_balance(account.address))
 
 ##########################################
 
