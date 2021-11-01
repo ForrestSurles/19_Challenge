@@ -76,10 +76,9 @@ from typing import Any, List
 # * `get_balance`
 # * `send_transaction`
 
-# @TODO:
-# From `crypto_wallet.py import the functions generate_account, get_balance,
-#  and send_transaction
-# YOUR CODE HERE
+from crypto_wallet import generate_account
+from crypto_wallet import get_balance
+from crypto_wallet import send_transaction
 
 ################################################################################
 # Fintech Finder Candidate Information
